@@ -28,4 +28,10 @@ So its never too cold
 
 As a user
 I want want max temperature to be 25 degrees if power saving mode is on
-so i can save energy
+So I can save energy
+
+#If power saving mode is off, the maximum temperature is 32 degrees
+
+As a user
+I want want max temperature to be 32 degrees if power saving mode is off
+So I don't cook 
