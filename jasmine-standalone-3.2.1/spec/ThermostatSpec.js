@@ -15,7 +15,7 @@ describe("Thermostat", function() {
       expect(thermostat.temperature()).toEqual(23);
     })
   })
-  
+
   describe("decrease", function() {
     it("should decrease the temperature of the thermostat", function() {
       thermostat.decrease(10);
@@ -54,8 +54,8 @@ describe("Thermostat", function() {
       thermostat.powersaveOff();
       thermostat.powersaveOn();
       expect(thermostat._powersave).toEqual(true);
-    })
-  })
+    });
+  });
 
   describe("Reset", function() {
     it ("should reset the temperature to 20 with reset button", function() {
@@ -64,4 +64,17 @@ describe("Thermostat", function() {
       expect(thermostat.temperature()).toEqual(20);
     });
   });
+
+  describe("Usage", function() {
+    it ("Wants to show low-usage when the temperature is under 18 degrees", function() {
+      thermostat.decrease(3);
+      expect(thermostat.usage()).toEqual("low-usage");
+    });
+  });
+    it ("Wants to show high-usage when the temperature is over 25", function(){
+      thermostat.powersaveOff();
+      thermostat.increase(6);
+      console.log(thermostat.temperature())
+      expect(thermostat.usage()).toEqual("high-usage");
+    });
 });

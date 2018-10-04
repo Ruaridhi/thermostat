@@ -1,6 +1,7 @@
 function Thermostat() {
   this._temperature = 20;
   this._powersave = true;
+  this._usage = "medium-usage";
 }
 
 Thermostat.prototype.temperature = function() {
@@ -42,4 +43,12 @@ Thermostat.prototype.decrease = function(degreesDown) {
     this._temperature -= degreesDown;
   }
 
+}
+
+Thermostat.prototype.usage = function() {
+  if (this._temperature < 18){
+    return this._usage = "low-usage";
+  } else if (this._temperature > 25) {
+    return this._usage = "high-usage";
+  }
 }
