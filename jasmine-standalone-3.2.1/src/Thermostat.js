@@ -16,10 +16,13 @@ Thermostat.prototype.powersaveOn = function() {
 }
 
 Thermostat.prototype.increase = function(degreesUp) {
-  if (this._powersave == true && this._temperature + degreesUp > 25) {
+  if (this._powersave == true && this._temperature + degreesUp > 25){
     this._temperature = 25;
     return("Power saving mode on, max temperature 25 degrees");
-  } else {
+  } else if (this._powersave == false && this._temperature + degreesUp > 32){
+    this._temperature = 32;
+    return("Power saving mode off, max temperature 32 degrees");
+  }else {
     this._temperature += degreesUp;
   }
 }

@@ -29,7 +29,7 @@ describe("Thermostat", function() {
     })
   })
   describe("max power-save temperature", function() {
-    it("should limit temperature to 25 in powersaving mode is on", function(){
+    it("should limit temperature to 25 if powersaving mode is on", function(){
       thermostat.increase(10);
       expect(thermostat.temperature()).toEqual(25);
     })
@@ -40,11 +40,10 @@ describe("Thermostat", function() {
     })
   })
   describe("Power save off", function() {
-    it("should turn power save mode off and allow temps over 25 to be set", function() {
+    it("should turn power save mode off and allow temps to reach 32", function() {
       thermostat.powersaveOff();
-      thermostat.increase(100);
-      expect(thermostat._powersave).toEqual(false);
-      expect(thermostat.temperature()).toEqual(120);
+      thermostat.increase(13);
+      expect(thermostat.temperature()).toEqual(32);
 
     })
   })
