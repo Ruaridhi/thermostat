@@ -2,25 +2,33 @@
 
 <html>
 <head>
-  <script src = "src/Thermostat.js"> </script>
+
 </head>
 
-<body>
-  <form>
-    <input type = "submit" value = "Reset">
-    <input type = "submit" value = "Increase">
-    <input type = "submit" value = "Decrease">
-    <br> Powersave Buttons
-    On <input type = "radio" name = "powersaver" value = "On">
-    Off <input type = "radio" name = "powersaver" value = "Off">
-  </form>
+  <body>
+    <form>
+      <input id="reset" type = "submit" value = "Reset">
+      <input type = "submit" value = "Increase">
+      <input type = "submit" value = "Decrease">
+      <br> Powersave Buttons
+      On <input type = "radio" name = "powersaver" value = "On">
+      Off <input type = "radio" name = "powersaver" value = "Off">
+    </form>
 
-  <p id="usage">Usage is at #fillthiswithusage</p>
 
-  <p id="max">The maximum tempature has been reached</p>
-  <p id="min">The minimim temperature has been reached</p>
+    <!-- <script src = "Thermostat.js"></script> -->
 
-  <h1> The tempature is #fillthiswithcurrenttemperature </h1>
 
-  </html>
-</body>
+
+
+    <p id="usage">Usage is at #fillthiswithusage</p>
+
+    <p id="max">The maximum tempature has been reached</p>
+    <p id="min">The minimim temperature has been reached</p>
+
+    <h1 id="temperature"> The tempature is #fillthiswithcurrenttemperature </h1>
+    <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="src/Thermostat.js"></script>
+    <script src = "js/interface.js"></script>
+  </body>
+</html>
