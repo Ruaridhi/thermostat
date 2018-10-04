@@ -15,12 +15,13 @@ describe("Thermostat", function() {
       expect(thermostat.temperature()).toEqual(23);
     })
   })
+  
   describe("decrease", function() {
     it("should decrease the temperature of the thermostat", function() {
       thermostat.decrease(10);
       expect(thermostat.temperature()).toEqual(10);
-    })
-  })
+    });
+  });
 
   describe("min temperature", function() {
     it("should raise error if temperature drops below 10 degrees", function() {
@@ -55,4 +56,12 @@ describe("Thermostat", function() {
       expect(thermostat._powersave).toEqual(true);
     })
   })
-})
+
+  describe("Reset", function() {
+    it ("should reset the temperature to 20 with reset button", function() {
+      thermostat.increase(5);
+      thermostat.reset();
+      expect(thermostat.temperature()).toEqual(20);
+    });
+  });
+});

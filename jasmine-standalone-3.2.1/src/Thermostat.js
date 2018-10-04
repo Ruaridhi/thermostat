@@ -15,7 +15,14 @@ Thermostat.prototype.powersaveOn = function() {
   this._powersave = true;
 }
 
+Thermostat.prototype.reset = function() {
+  return this._temperature = 20
+}
+
+
+
 Thermostat.prototype.increase = function(degreesUp) {
+
   if (this._powersave == true && this._temperature + degreesUp > 25){
     this._temperature = 25;
     return("Power saving mode on, max temperature 25 degrees");
