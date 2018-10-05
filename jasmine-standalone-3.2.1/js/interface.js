@@ -7,4 +7,9 @@ $('#up').click(function(){
   thermostat.increase(1);
   $('#temperature').text(thermostat.temperature());
   });
+
+$('#down').click(function(){
+  thermostat.decrease(1);
+  $('#temperature').text(thermostat.temperature());
+})
 });
