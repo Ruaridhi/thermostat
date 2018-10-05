@@ -12,4 +12,12 @@ $('#down').click(function(){
   thermostat.decrease(1);
   $('#temperature').text(thermostat.temperature());
 })
+
+$('#reset').click(function(){
+  thermostat.reset();
+  $('#temperature').text(thermostat.temperature());
+});
+
+
+
 });
