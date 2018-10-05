@@ -18,6 +18,13 @@ $('#reset').click(function(){
   $('#temperature').text(thermostat.temperature());
 });
 
+$("#off").click(function(){
+  thermostat.powersaveOff();
+});
 
+$("#on").click(function(){
+  thermostat.powersaveOn();
+  $('#temperature').text(thermostat.temperature());
+});
 
 });
