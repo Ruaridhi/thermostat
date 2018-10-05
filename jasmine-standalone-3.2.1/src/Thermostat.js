@@ -7,7 +7,7 @@ function Thermostat() {
 Thermostat.prototype.temperature = function() {
   return this._temperature;
 }
-  
+
 Thermostat.prototype.powersaveOff = function() {
   this._powersave = false;
 }
@@ -19,7 +19,6 @@ Thermostat.prototype.powersaveOn = function() {
 Thermostat.prototype.reset = function() {
   return this._temperature = 20
 }
-
 
 Thermostat.prototype.increase = function(degreesUp) {
 
@@ -50,4 +49,5 @@ Thermostat.prototype.usage = function() {
   } else if (this._temperature > 25) {
     return this._usage = "high-usage";
   }
+  else {return this._usage = "medium-usage";}
 }
